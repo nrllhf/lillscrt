@@ -2,101 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Raleway:wght@300;400;500;600&display=swap');
 
-/* Birthday celebration design system */
+/* Dark Romance Intimate design system */
 
 @layer base {
   :root {
-    --background: 35 100% 98%;
-    --foreground: 25 30% 20%;
+    --background: 0 10% 6%;
+    --foreground: 0 20% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 25 30% 20%;
+    --card: 0 12% 10%;
+    --card-foreground: 0 20% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 25 30% 20%;
+    --popover: 0 12% 10%;
+    --popover-foreground: 0 20% 92%;
 
-    --primary: 340 82% 65%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 350 70% 45%;
+    --primary-foreground: 0 20% 95%;
 
-    --secondary: 43 96% 65%;
-    --secondary-foreground: 25 30% 20%;
+    --secondary: 25 50% 65%;
+    --secondary-foreground: 0 10% 10%;
 
-    --muted: 35 30% 90%;
-    --muted-foreground: 25 20% 45%;
+    --muted: 0 10% 15%;
+    --muted-foreground: 0 15% 60%;
 
-    --accent: 340 70% 75%;
-    --accent-foreground: 25 30% 20%;
+    --accent: 350 50% 35%;
+    --accent-foreground: 0 20% 92%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 35 30% 85%;
-    --input: 35 30% 85%;
-    --ring: 340 82% 65%;
+    --border: 0 15% 20%;
+    --input: 0 15% 20%;
+    --ring: 350 70% 45%;
 
     --radius: 1rem;
 
-    /* Custom celebration colors */
-    --gold: 43 96% 58%;
-    --gold-light: 43 100% 75%;
-    --coral: 12 90% 70%;
-    --blush: 340 60% 90%;
-    --cream: 35 100% 96%;
+    /* Custom dark romance colors */
+    --gold: 25 60% 55%;
+    --gold-light: 25 50% 70%;
+    --coral: 350 45% 55%;
+    --blush: 350 40% 25%;
+    --cream: 25 30% 85%;
+    --burgundy: 350 65% 35%;
+    --rose-gold: 15 45% 65%;
+    --deep-wine: 350 70% 25%;
     
     /* Gradients */
-    --gradient-celebration: linear-gradient(135deg, hsl(340 82% 65%) 0%, hsl(12 90% 70%) 50%, hsl(43 96% 65%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(43 96% 58%) 0%, hsl(43 100% 75%) 100%);
-    --gradient-soft: linear-gradient(180deg, hsl(35 100% 98%) 0%, hsl(340 60% 95%) 100%);
+    --gradient-celebration: linear-gradient(135deg, hsl(350 70% 45%) 0%, hsl(350 65% 35%) 50%, hsl(25 60% 55%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(25 60% 55%) 0%, hsl(15 45% 65%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(0 10% 6%) 0%, hsl(350 20% 10%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(350 70% 45% / 0.15) 0%, transparent 70%);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 25 30% 8%;
-    --foreground: 35 100% 95%;
-
-    --card: 25 25% 12%;
-    --card-foreground: 35 100% 95%;
-
-    --popover: 25 25% 12%;
-    --popover-foreground: 35 100% 95%;
-
-    --primary: 340 82% 65%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 43 70% 50%;
-    --secondary-foreground: 25 30% 10%;
-
-    --muted: 25 20% 20%;
-    --muted-foreground: 35 30% 70%;
-
-    --accent: 340 60% 50%;
-    --accent-foreground: 35 100% 95%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 25 20% 25%;
-    --input: 25 20% 25%;
-    --ring: 340 82% 65%;
-    
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 10% 8%;
+    --sidebar-foreground: 0 20% 92%;
+    --sidebar-primary: 350 70% 45%;
+    --sidebar-primary-foreground: 0 20% 95%;
+    --sidebar-accent: 0 10% 15%;
+    --sidebar-accent-foreground: 0 20% 92%;
+    --sidebar-border: 0 15% 18%;
+    --sidebar-ring: 350 70% 45%;
   }
 }
 
@@ -107,19 +72,19 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
   }
 
   h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
   }
 
   .font-script {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Great Vibes', cursive;
   }
 
   .font-display {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
   }
 }
 
@@ -139,12 +104,32 @@
     background: var(--gradient-soft);
   }
 
+  .bg-glow {
+    background: var(--gradient-glow);
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 40px hsl(350 70% 45% / 0.3), 0 0 80px hsl(350 70% 45% / 0.1);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 30px hsl(350 70% 45% / 0.5);
+  }
+
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
 
   .animate-sparkle {
-    animation: sparkle 1.5s ease-in-out infinite;
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .animate-flicker {
+    animation: flicker 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
   }
 
   @keyframes float {
@@ -153,8 +138,23 @@
   }
 
   @keyframes sparkle {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.2); }
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  @keyframes flicker {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+    25%, 75% { opacity: 0.6; }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(350 70% 45% / 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 40px hsl(350 70% 45% / 0.5), 0 0 60px hsl(25 60% 55% / 0.2);
+    }
   }
 
   @keyframes confetti-fall {
