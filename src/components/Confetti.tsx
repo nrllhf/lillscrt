@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-interface ConfettiPiece {
+interface Petal {
   id: number;
   x: number;
   delay: number;
@@ -12,54 +12,56 @@ interface ConfettiPiece {
 }
 
 const colors = [
-  "hsl(340, 82%, 65%)", // primary pink
-  "hsl(43, 96%, 65%)",  // gold
-  "hsl(12, 90%, 70%)",  // coral
-  "hsl(340, 60%, 90%)", // blush
-  "hsl(43, 100%, 75%)", // light gold
+  "hsl(350, 70%, 45%)", // burgundy
+  "hsl(350, 65%, 35%)", // deep wine
+  "hsl(25, 60%, 55%)",  // rose gold
+  "hsl(15, 45%, 65%)",  // soft rose gold
+  "hsl(350, 40%, 25%)", // dark blush
 ];
 
 const Confetti = () => {
-  const [pieces, setPieces] = useState<ConfettiPiece[]>([]);
+  const [petals, setPetals] = useState<Petal[]>([]);
 
   useEffect(() => {
-    const newPieces: ConfettiPiece[] = [];
-    for (let i = 0; i < 50; i++) {
-      newPieces.push({
+    const newPetals: Petal[] = [];
+    for (let i = 0; i < 35; i++) {
+      newPetals.push({
         id: i,
         x: Math.random() * 100,
-        delay: Math.random() * 5,
-        duration: 3 + Math.random() * 4,
+        delay: Math.random() * 8,
+        duration: 8 + Math.random() * 6,
         color: colors[Math.floor(Math.random() * colors.length)],
-        size: 8 + Math.random() * 12,
+        size: 6 + Math.random() * 10,
         rotation: Math.random() * 360,
       });
     }
-    setPieces(newPieces);
+    setPetals(newPetals);
   }, []);
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-10">
-      {pieces.map((piece) => (
+      {petals.map((petal) => (
         <motion.div
-          key={piece.id}
+          key={petal.id}
           className="absolute"
           style={{
-            left: `${piece.x}%`,
-            width: piece.size,
-            height: piece.size,
-            backgroundColor: piece.color,
-            borderRadius: Math.random() > 0.5 ? "50%" : "2px",
+            left: `${petal.x}%`,
+            width: petal.size,
+            height: petal.size * 1.3,
+            backgroundColor: petal.color,
+            borderRadius: "50% 0 50% 50%",
+            opacity: 0.6,
           }}
-          initial={{ y: -100, rotate: 0, opacity: 1 }}
+          initial={{ y: -100, rotate: 0, opacity: 0 }}
           animate={{
             y: "100vh",
-            rotate: piece.rotation + 720,
-            opacity: [1, 1, 0],
+            rotate: petal.rotation + 360,
+            opacity: [0, 0.6, 0.6, 0],
+            x: [0, 30, -20, 10, 0],
           }}
           transition={{
-            duration: piece.duration,
-            delay: piece.delay,
+            duration: petal.duration,
+            delay: petal.delay,
             repeat: Infinity,
             ease: "linear",
           }}

@@ -62,6 +62,9 @@ export default {
         coral: "hsl(var(--coral))",
         blush: "hsl(var(--blush))",
         cream: "hsl(var(--cream))",
+        burgundy: "hsl(var(--burgundy))",
+        "rose-gold": "hsl(var(--rose-gold))",
+        "deep-wine": "hsl(var(--deep-wine))",
       },
       borderRadius: {
         lg: "var(--radius)",
