@@ -79,15 +79,121 @@ const BirthdayCard = () => {
 
       {/* Message */}
       <motion.div
-        className="bg-blush/40 rounded-2xl p-6 mb-8 border border-primary/10"
+        className="bg-blush/40 rounded-2xl p-8 mb-8 border border-primary/10 space-y-6"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.2 }}
       >
+        <p className="text-center text-foreground/90 leading-relaxed text-lg font-light italic">
+          You have always loved in quiet ways,<br />
+          and I've learned that the softest love is often the deepest.
+        </p>
+        
         <p className="text-center text-foreground/90 leading-relaxed text-lg font-light">
-          Di hari yang istimewa ini, ku persembahkan seluruh doa dan harapan terbaik untukmu. 
-          Semoga setiap langkahmu dipenuhi cinta, setiap hari dipenuhi kebahagiaan, 
-          dan setiap mimpi menjadi kenyataan. Kau adalah cahaya yang menerangi hidupku.
+          With you, there is a warmth that never seeks attention —<br />
+          only understanding, patience, and sincerity.<br />
+          You never raise your voice, never make love feel heavy.<br />
+          Instead, you choose gentleness and calm,<br />
+          a kindness that feels rare and deeply genuine.
+        </p>
+
+        <p className="text-center text-foreground/90 leading-relaxed text-lg font-light">
+          With me, you allow yourself to be soft and caring,<br />
+          to love in a way that feels safe, honest, and real.
+        </p>
+
+        <div className="flex items-center justify-center gap-4 py-4">
+          <div className="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent w-16" />
+          <Heart className="w-3 h-3 text-primary/60 fill-primary/60" />
+          <div className="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent w-16" />
+        </div>
+
+        <p className="text-center text-foreground/90 leading-relaxed text-lg font-light">
+          Today, I want you to know how deeply you are appreciated —<br />
+          not for what you do, but for who you are.<br />
+          Your gentle heart, your quiet strength,<br />
+          and the way you love so naturally<br />
+          mean more to me than words could ever fully express.
+        </p>
+
+        <p className="text-center text-foreground/90 leading-relaxed text-lg font-light">
+          No matter what life brings your way,<br />
+          please know this: <span className="text-primary font-medium">I am here.</span><br />
+          I will always stand beside you —<br />
+          through every step, every challenge, every change,<br />
+          in strength and in silence,<br />
+          <span className="italic">always.</span>
+        </p>
+
+        <div className="flex items-center justify-center gap-4 py-4">
+          <div className="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent w-16" />
+          <Sparkles className="w-3 h-3 text-rose-gold/60" />
+          <div className="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent w-16" />
+        </div>
+
+        <p className="text-center text-foreground/90 leading-relaxed text-lg font-light">
+          As you step into a new year of your life,<br />
+          I pray that the world treats you with the same gentleness you give to others.
+        </p>
+
+        <p className="text-center text-foreground/90 leading-relaxed text-lg font-light">
+          May success follow you in all that you pursue,<br />
+          and may your efforts be met with ease, clarity,<br />
+          and growth that feels true to who you are.<br />
+          May every path you walk feel guided and smooth.
+        </p>
+
+        <p className="text-center text-foreground/90 leading-relaxed text-lg font-light">
+          May blessings and sustenance flow into your life continuously —<br />
+          not only in abundance, but in peace and contentment.<br />
+          May you always be surrounded by kind-hearted people,<br />
+          those who see your goodness, protect your softness,<br />
+          and choose sincerity every day.
+        </p>
+
+        <p className="text-center text-foreground/90 leading-relaxed text-lg font-light">
+          I pray for your health today and for all the years ahead —<br />
+          for strength when days feel heavy,<br />
+          for rest when your heart needs quiet,<br />
+          and for happiness that gently settles into your life<br />
+          and stays with you through every season.
+        </p>
+
+        <div className="flex items-center justify-center gap-4 py-4">
+          <div className="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent w-16" />
+          <Heart className="w-3 h-3 text-primary/60 fill-primary/60" />
+          <div className="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent w-16" />
+        </div>
+
+        <p className="text-center text-foreground/90 leading-relaxed text-lg font-light">
+          In this prayer, I also hold my gratitude.<br />
+          I am thankful for the moment our paths crossed,<br />
+          for the way your presence makes my days feel lighter,<br />
+          my heart calmer, and my life softer in ways I never expected.
+        </p>
+
+        <p className="text-center text-foreground/90 leading-relaxed text-lg font-light italic">
+          Knowing you has been a quiet kind of joy —<br />
+          one that lifts the weight of my days<br />
+          and reminds me that love can be gentle,<br />
+          steady, and deeply reassuring.
+        </p>
+
+        <p className="text-center text-foreground/90 leading-relaxed text-lg font-light">
+          Above all, I pray that you always feel loved —<br />
+          in moments of happiness, in moments of uncertainty,<br />
+          and even in silence.<br />
+          <span className="text-primary font-medium">Loved in a way that feels constant, sincere, and true.</span>
+        </p>
+
+        <p className="text-center text-foreground/90 leading-relaxed text-lg font-light">
+          You deserve a life filled with warmth, meaning,<br />
+          and gentle happiness —<br />
+          today, tomorrow, and always.
+        </p>
+
+        <p className="text-center text-secondary font-script text-2xl mt-8">
+          — yours, gently
         </p>
       </motion.div>
 
