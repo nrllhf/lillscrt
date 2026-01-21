@@ -3,6 +3,7 @@ import Confetti from "@/components/Confetti";
 import FloatingBalloons from "@/components/FloatingBalloons";
 import BirthdayCard from "@/components/BirthdayCard";
 import WishesSection from "@/components/WishesSection";
+import MusicPlayer from "@/components/MusicPlayer";
 import { Heart } from "lucide-react";
 
 const Birthday = () => {
@@ -34,6 +35,8 @@ const Birthday = () => {
           </div>
         </motion.footer>
       </main>
+
+      <MusicPlayer />
     </div>
   );
 };
