@@ -1,9 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Heart, ArrowLeft, RotateCcw } from "lucide-react";
 import { useState, useEffect } from "react";
-import MusicPlayer from "@/components/MusicPlayer";
+import { useNavigate } from "react-router-dom";
 
 const Love = () => {
+  const navigate = useNavigate();
   const [showBlackScreen, setShowBlackScreen] = useState(false);
   const [hearts, setHearts] = useState<
     { id: number; x: number; y: number; size: number; delay: number }[]
@@ -30,6 +31,25 @@ const Love = () => {
 
   return (
     <div className="min-h-screen bg-soft relative overflow-hidden">
+      {/* Back Button - visible before black screen */}
+      <AnimatePresence>
+        {!showBlackScreen && (
+          <motion.button
+            onClick={() => navigate("/letter")}
+            className="fixed top-6 left-6 z-50 group inline-flex items-center gap-2 px-4 py-2 bg-card/80 backdrop-blur-sm hover:bg-card rounded-full border border-primary/30 hover:border-primary/50 transition-all duration-300"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ delay: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ArrowLeft className="w-4 h-4 text-primary group-hover:-translate-x-1 transition-transform" />
+            <span className="text-foreground/80 text-sm font-light">Back</span>
+          </motion.button>
+        )}
+      </AnimatePresence>
+
       {/* Spreading Hearts */}
       <AnimatePresence>
         {!showBlackScreen && (
@@ -125,6 +145,34 @@ const Love = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
           >
+            {/* Navigation Buttons on Black Screen */}
+            <motion.div
+              className="fixed top-6 left-6 z-60 flex gap-3"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 3 }}
+            >
+              <motion.button
+                onClick={() => navigate("/letter")}
+                className="group inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full border border-primary/30 hover:border-primary/50 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ArrowLeft className="w-4 h-4 text-primary group-hover:-translate-x-1 transition-transform" />
+                <span className="text-white/80 text-sm font-light">Back</span>
+              </motion.button>
+              
+              <motion.button
+                onClick={() => navigate("/")}
+                className="group inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full border border-primary/30 hover:border-primary/50 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <RotateCcw className="w-4 h-4 text-primary" />
+                <span className="text-white/80 text-sm font-light">Start Over</span>
+              </motion.button>
+            </motion.div>
+
             {/* Floating hearts on black background */}
             {Array.from({ length: 20 }).map((_, i) => (
               <motion.div
@@ -220,8 +268,6 @@ const Love = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      <MusicPlayer />
     </div>
   );
 };
