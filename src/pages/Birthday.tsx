@@ -4,8 +4,7 @@ import Confetti from "@/components/Confetti";
 import FloatingBalloons from "@/components/FloatingBalloons";
 import BirthdayCard from "@/components/BirthdayCard";
 import WishesSection from "@/components/WishesSection";
-import MusicPlayer from "@/components/MusicPlayer";
-import { Heart, ArrowRight } from "lucide-react";
+import { Heart, ArrowRight, ArrowLeft } from "lucide-react";
 
 const Birthday = () => {
   const navigate = useNavigate();
@@ -15,6 +14,20 @@ const Birthday = () => {
       <Confetti />
       <FloatingBalloons />
       <div className="fixed inset-0 bg-gradient-to-b from-transparent via-primary/5 to-primary/10 pointer-events-none" />
+
+      {/* Back Button */}
+      <motion.button
+        onClick={() => navigate("/")}
+        className="fixed top-6 left-6 z-50 group inline-flex items-center gap-2 px-4 py-2 bg-card/80 backdrop-blur-sm hover:bg-card rounded-full border border-primary/30 hover:border-primary/50 transition-all duration-300"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <ArrowLeft className="w-4 h-4 text-primary group-hover:-translate-x-1 transition-transform" />
+        <span className="text-foreground/80 text-sm font-light">Back</span>
+      </motion.button>
 
       <main className="relative z-20 px-4 py-12 md:py-20">
         <BirthdayCard />
@@ -58,8 +71,6 @@ const Birthday = () => {
           </div>
         </motion.footer>
       </main>
-
-      <MusicPlayer />
     </div>
   );
 };
